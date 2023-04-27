@@ -10,6 +10,10 @@ const USAPhoneNumber = () => {
     const ValidatePhoneNumber = (number) => {
         if (phoneRegex.test(number)) {
             setValid(true);
+
+            //getting 10 digits phone number without brackets, space and hyphen 
+            number = number.replace(/\D/g, "")
+            console.log(number);
         }
         else {
             setValid(false);

@@ -102,12 +102,26 @@ This is an example of how to list things you need to use the software and how to
 ## Usage
 
 ```
-const phoneRegex = /^(?!(?:\D*0)+\D*$)\(?([0-9]{3})\)?[ ]?[0-9]{3}[-]?[0-9]{4}$/;
+//phone number masking function that adds round brackets to first 3 digits, followed followed by a nonbreaking space, and then hyphenate the 3 digit exchange code with the 4 digit number
+    const phoneMask = (phone) => {
+        return phone.replace(/\D/g, '')
+            .replace(/^(\d)/, '($1')
+            .replace(/^(\(\d{3})(\d)/, '$1) $2')
+            .replace(/(\d{3})(\d{1,5})/, '$1-$2')
+            .replace(/(-\d{4})\d+?$/, '$1');
+    }
+
+//regex for 10 digit number with standard format US phone number format: (XXX) XXX-XXXX
+    const phoneRegex = /^(?!(?:\D*0)+\D*$)\(?([0-9]{3})\)?[ ]?[0-9]{3}[-]?[0-9]{4}$/;
 
     //validating phone number with regex to match standard format: (XXX) XXX-XXXX
     const ValidatePhoneNumber = (number) => {
         if (phoneRegex.test(number)) {
             setValid(true);
+
+            //getting 10 digits phone number without brackets, space and hyphen 
+            number = number.replace(/\D/g, "")
+            console.log(number);
         }
         else {
             setValid(false);
