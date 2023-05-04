@@ -34,10 +34,11 @@ const USAPhoneNumber = () => {
         event.target.value ? ValidatePhoneNumber(event.target.value) : setValid();
     }
     return (
-        <div>
+        <div className='block'>
             <h2>USA Phone Number Validation</h2>
             <div className='input-group'>
                 <input
+                    className='input-box'
                     type="text"
                     name="phone"
                     placeholder="enter phone number"

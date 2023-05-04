@@ -26,7 +26,7 @@
   <p align="center">
     This is an effort by [IncubXperts](https://incubxperts.com) to provide commonly used source code snippets as open source code to community. Feel free to use it in your projects, suggest improvements, report bugs to improve the code for community.  Feel free to contribute. 
     <br />
-    Source code example to create an input field to accept USA phone number with validations in ReactJs.
+    Source code example to create an input field to accept USA and Global phone number with validations in ReactJs.
     <br />
     <a href="https://github.com/IncubXperts/usa-phone-number-validation-react/issues">Report Bug</a>
    �
@@ -66,11 +66,20 @@
 ## About The Project
 
 Source code example to create an input field to accept US phone number with validations in ReactJs. In our software projects many times, we need to create phone number fields with validations. 
-For example, If a user has to create a form wherein, he needs to accept a USA specific phone number from the user.  
+  
+  For example, If a user has to create a form wherein, he needs to accept a USA specific phone number from the user.
 A typical USA phone number is ten along with a combination of brackets/hyphens/commas/dots and(or) nonbreaking spaces. Hence, USA phone numbers can be written in a number of formats. In order to keep the phone number formats consistent throughout the application, we have created an input field which accepts only ten digits from the user. The first three digits are the area code encapsulated inside the round brackets, followed by a nonbreaking space, and then hyphenate the three-digit exchange code with the four-digit number.
 A standard American phone number looks like this: `(XXX) XXX-XXXX`. 
-This sample source code provides an example to accept US based phone number with standard format. We accept only a ten digit phone number from the user, and we have used regex in order to create masking to input field, which adds brckets, non breaking space and a hyphen. Further, the phone number is tested with a regex expression to match the standard format: `(XXX) XXX-XXXX`
+We accept only a ten digit phone number from the user, and we have used regex in order to create masking to input field, which adds brckets, non breaking space and a hyphen. Further, the phone number is tested with a regex expression to match the standard format: `(XXX) XXX-XXXX`
 
+  If a user needs to accept a global phone number input from the user,
+Phone numbers contain several components. An area code. The phone number itself and an international country code!
+Then, there are many conventions for expressing the phone number. 
+In some countries, they use periods to separate the numbers and improve readability. 
+Some use dashes. Others use parentheses. Some use spaces. 
+In order to keep the phone number formats consistent throughout the application, we have used an open source library in ReatJs which provides us with input fileds for global phone numbers in standardized format!
+This sample source code provides an example to accept Global phone number. 
+For this we have used, [react-phone-number-input](https://www.npmjs.com/package/react-phone-number-input), which further uses [libphonenumber-js](https://www.npmjs.com/package/libphonenumber-js) for phone number parsing and formatting.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
